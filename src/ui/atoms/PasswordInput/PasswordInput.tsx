@@ -5,7 +5,8 @@ import { Icon, Input } from 'ui';
 
 import './PasswordInput.less';
 
-interface PasswordInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface PasswordInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent) => void;
@@ -38,7 +39,8 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         role="presentation"
         className="bf-password-input__icon-eye"
         onMouseDown={handleVisible}
-        onMouseUp={handleHide}>
+        onMouseUp={handleHide}
+      >
         <Icon icon={visible ? 'eye' : 'eye-off'} />
       </div>
     </div>

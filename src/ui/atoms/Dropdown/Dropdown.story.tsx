@@ -8,7 +8,7 @@ import { Dropdown } from './Dropdown';
 const menu = (
   <div>
     <div>Профиль</div>
-    <div role="presentation" onClick={() => console.log('CLick!!')}>
+    <div role="presentation" onClick={() => null}>
       Настройки
     </div>
     <div>Выйти</div>
@@ -25,7 +25,8 @@ storiesOf('Atoms/Dropdwon', module)
         alignItems: 'center',
         width: '400px',
         margin: '25px',
-      }}>
+      }}
+    >
       <Dropdown placement="downRight" overlay={menu}>
         <span>Click me! Right</span>
       </Dropdown>

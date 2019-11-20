@@ -10,7 +10,11 @@ interface ReplyButtonsProps {}
 export const ReplyButtons: React.FC<ReplyButtonsProps> = () => {
   return (
     <div className={classnames('bf-reply-buttons')}>
-      <Button size="large" shape="round" className="bf-reply-buttons__reply-button">
+      <Button
+        size="large"
+        shape="round"
+        className="bf-reply-buttons__reply-button"
+      >
         Кнопка
       </Button>
       <Button size="large" shape="round">

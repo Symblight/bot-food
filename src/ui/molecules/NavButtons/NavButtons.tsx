@@ -7,7 +7,7 @@ import './NavButtons.less';
 
 interface NavButtonsProps {
   className?: string;
-  onAdd?: (value: string) => void;
+  onAdd: (value: string) => void;
 }
 
 export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
@@ -34,28 +34,32 @@ export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
         <div
           className={classnames('bf-nav-buttons__item')}
           role="presentation"
-          onClick={handleClickText}>
+          onClick={handleClickText}
+        >
           <Icon icon="message" />
           <span className="bf-nav-buttons__text">Текст</span>
         </div>
         <div
           className={classnames('bf-nav-buttons__item')}
           role="presentation"
-          onClick={handleClickMenu}>
+          onClick={handleClickMenu}
+        >
           <Icon icon="grid" />
           <span className="bf-nav-buttons__text">Меню</span>
         </div>
         <div
           className={classnames('bf-nav-buttons__item')}
           role="presentation"
-          onClick={handleClickButtons}>
+          onClick={handleClickButtons}
+        >
           <Icon icon="flash" />
           <span className="bf-nav-buttons__text">Кнопки</span>
         </div>
         <div
           className={classnames('bf-nav-buttons__item')}
           role="presentation"
-          onClick={handleClickCart}>
+          onClick={handleClickCart}
+        >
           <Icon icon="shopping-cart" />
           <span className="bf-nav-buttons__text">Корзина</span>
         </div>

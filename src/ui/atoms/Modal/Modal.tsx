@@ -1,12 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
-import classnames from 'classnames';
 
 import { Icon } from 'ui';
 
 import './Modal.less';
-
-const modalRoot = document.querySelector('#modal-root');
 
 interface ModalProps {
   visible?: boolean;
@@ -16,7 +13,7 @@ interface ModalProps {
 }
 
 interface PortalProps {
-  root?: Element;
+  root: Element;
   children?: React.ReactNode;
 }
 
@@ -24,15 +21,21 @@ const Portal: React.FC<PortalProps> = ({ root, children }) => {
   return ReactDOM.createPortal(children, root);
 };
 
-export const Modal: React.FC<ModalProps> = ({ title, visible, children, onClose }) => {
+export const Modal: React.FC<ModalProps> = ({
+  title,
+  visible,
+  children,
+  onClose,
+}) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   if (!visible) {
     return null;
   }
+  const modalRoot = document.querySelector('#modal-root');
 
   return (
-    <Portal root={modalRoot}>
+    <Portal root={modalRoot || document.body}>
       <div className="bf-modal">
         <div className="bf-modal__modal-control">
           <div className="bf-modal__inner-wrap" ref={wrapperRef}>
@@ -42,7 +45,8 @@ export const Modal: React.FC<ModalProps> = ({ title, visible, children, onClose 
                 className="bf-modal__close"
                 onClick={onClose}
                 onKeyDown={onClose}
-                role="presentation">
+                role="presentation"
+              >
                 <Icon icon="close" />
               </div>
             </div>

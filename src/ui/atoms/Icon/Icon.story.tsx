@@ -39,7 +39,8 @@ storiesOf('Atoms/Icons', module).add('Icons', () => (
           flexDirection: 'column',
           alignItems: 'center',
           marginLeft: '10px',
-        }}>
+        }}
+      >
         <Icon icon={type} />
         <span style={{ margin: '10px' }}>{type}</span>
       </div>

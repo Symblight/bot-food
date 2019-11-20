@@ -11,7 +11,7 @@ interface ChildProps {
 }
 
 interface OptionNodeProps {
-  props?: ChildProps;
+  props: ChildProps;
 }
 
 export interface SelectProps {
@@ -21,13 +21,16 @@ export interface SelectProps {
   label?: string;
   value?: string;
   error?: string;
-  children?: React.ReactNode[];
+  children: React.ReactElement;
   onChange?: (value: string) => void;
 }
 
-export function useOnClickOutside(ref, handler) {
+export function useOnClickOutside(
+  ref: React.RefObject<HTMLDivElement>,
+  handler: (event: React.MouseEvent) => void,
+) {
   useEffect(() => {
-    const listener = (event) => {
+    const listener = (event: any): void => {
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
@@ -42,8 +45,6 @@ export function useOnClickOutside(ref, handler) {
       document.removeEventListener('touchstart', listener);
     };
   }, [ref, handler]);
-
-  return null;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -54,38 +55,47 @@ export const Select: React.FC<SelectProps> = ({
   onChange,
   error,
 }) => {
-  const [opened, toggleOpened] = useState<boolean>(false);
-  const [value, setValue] = useState<string>(valueProps);
-  const [valueInput, setValueInput] = useState<string>('');
+  const [opened, toggleOpened] = useState(false);
+  const [value, setValue] = useState(valueProps);
+  const [valueInput, setValueInput] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getTextOption = useCallback(
     (data) => {
-      const target: OptionNodeProps = children.find(
-        (child: React.ReactElement<ChildProps>) => child.props.value === data,
+      const target: (React.ReactElement<
+        ChildProps
+      > | null)[] = React.Children.map(
+        children,
+        (child: React.ReactElement<ChildProps>) => {
+          if (child.props.value === data) {
+            return child;
+          }
+
+          return null;
+        },
       );
-      return target && target.props.children;
+      return target[0] && target[0].props.children;
     },
     [children],
   );
 
   useEffect(() => {
-    setValueInput(getTextOption(value));
+    setValueInput(getTextOption(value) || '');
   }, [getTextOption, value]);
 
   const handleToggle = () => {
     toggleOpened((prevState) => !prevState);
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = () => {
     toggleOpened(false);
   };
 
   useOnClickOutside(wrapperRef, handleClickOutside);
 
-  const handleClickOption = (props) => {
+  const handleClickOption = (props: ChildProps) => {
     setValue(props.value);
-    setValueInput(getTextOption(props.value));
+    setValueInput(getTextOption(props.value) || '');
     handleToggle();
 
     if (onChange) {
@@ -93,7 +103,7 @@ export const Select: React.FC<SelectProps> = ({
     }
   };
 
-  const handleChangeInput = (event) => {
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValueInput(event.target.value);
   };
 
@@ -103,24 +113,31 @@ export const Select: React.FC<SelectProps> = ({
         className={classnames(
           opened ? `bf-select__list--active` : null,
           'bf-select__list',
-        )}>
+        )}
+      >
         {React.Children.map(
           children,
-          (option: React.ReactElement<ChildProps>) => (
-            <li
-              key={option.props.value}
-              value={option.props.value}
-              role="option"
-              aria-selected
-              className={classnames(
-                value === option.props.value && 'bf-select__listitem--active',
-                'bf-select__listitem',
-              )}
-              onKeyPress={() => handleClickOption(option.props)}
-              onClick={() => handleClickOption(option.props)}>
-              {option.props.children}
-            </li>
-          ),
+          (option: React.ReactElement<ChildProps>) => {
+            if (!React.isValidElement<ChildProps>(option)) {
+              return option;
+            }
+            return (
+              <li
+                key={option.props.value}
+                value={option.props.value}
+                role="option"
+                aria-selected
+                className={classnames(
+                  value === option.props.value && 'bf-select__listitem--active',
+                  'bf-select__listitem',
+                )}
+                onKeyPress={() => handleClickOption(option.props)}
+                onClick={() => handleClickOption(option.props)}
+              >
+                {option.props.children}
+              </li>
+            );
+          },
         )}
       </ul>
     );

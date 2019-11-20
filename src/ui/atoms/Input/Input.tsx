@@ -3,10 +3,11 @@ import classnames from 'classnames';
 
 import './Input.less';
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   value?: string;
-  onChange?: (event: React.ChangeEvent) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   type?: string;
   error?: string;
@@ -31,7 +32,7 @@ export const Input: React.FC<InputProps> = ({
           'bf-input__control',
           disabled && 'bf-input__control--disabled',
           error && 'bf-input__control--error',
-          `bf-input__control--${sizeInput}`
+          `bf-input__control--${sizeInput}`,
         )}
         value={value}
         onChange={onChange}

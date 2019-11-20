@@ -9,9 +9,17 @@ interface TagProps {
   children: React.ReactNode;
 }
 
-export const Tag: React.FC<TagProps> = ({ className, type, children, ...rest }) => {
+export const Tag: React.FC<TagProps> = ({
+  className,
+  type,
+  children,
+  ...rest
+}) => {
   return (
-    <div {...rest} className={classnames(className, 'bf-tag', `bf-tag--${type}`)}>
+    <div
+      {...rest}
+      className={classnames(className, 'bf-tag', `bf-tag--${type}`)}
+    >
       <div className="bf-tag__content">{children}</div>
     </div>
   );

@@ -9,7 +9,7 @@ interface IconProps {
   icon: string;
 }
 
-const iconLoader = name =>
+const iconLoader = (name: string) =>
   // eslint-disable-next-line import/no-dynamic-require
   require(`!babel-loader!svg-react-loader!../../../../src/webroot/icons/${name}.svg`);
 

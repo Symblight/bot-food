@@ -40,13 +40,13 @@ export const Button: React.FC<ButtonProps> = ({
         size && `bf-button--${size}`,
         disabled && 'bf-button--disabled',
         priority && `bf-button--type-${priority}`,
-        shape && `bf-button--shape-${shape}`
+        shape && `bf-button--shape-${shape}`,
       ),
       onClick,
       href,
       type,
     },
-    icon || children
+    icon || children,
   );
 };
 

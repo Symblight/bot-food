@@ -17,7 +17,13 @@ interface BotCardProps {
   to: string;
 }
 
-export const BotCard: React.FC<BotCardProps> = ({ className, to, data, onEdit, onArchive }) => {
+export const BotCard: React.FC<BotCardProps> = ({
+  className,
+  to,
+  data,
+  onEdit,
+  onArchive,
+}) => {
   const handleOnArchive = () => {
     if (onArchive) {
       onArchive(data.id);
@@ -33,11 +39,19 @@ export const BotCard: React.FC<BotCardProps> = ({ className, to, data, onEdit, o
   const renderOptions = () => {
     return (
       <div className="menu-bot-card">
-        <div role="presentation" className="menu-bot-card__menuitem" onClick={handleOnArchive}>
+        <div
+          role="presentation"
+          className="menu-bot-card__menuitem"
+          onClick={handleOnArchive}
+        >
           <Icon icon="archive" />
           Архивировать
         </div>
-        <div role="presentation" className="menu-bot-card__menuitem" onClick={handleOnEdit}>
+        <div
+          role="presentation"
+          className="menu-bot-card__menuitem"
+          onClick={handleOnEdit}
+        >
           <Icon icon="edit" />
           Редактировать
         </div>
@@ -52,7 +66,11 @@ export const BotCard: React.FC<BotCardProps> = ({ className, to, data, onEdit, o
           <span>{data.title}</span>
           <div className="bf-card-bot__menu">
             <Dropdown overlay={renderOptions()}>
-              <Button size="small" type="inline" icon={<Icon icon="more-vertical" />} />
+              <Button
+                size="small"
+                type="inline"
+                icon={<Icon icon="more-vertical" />}
+              />
             </Dropdown>
           </div>
         </div>

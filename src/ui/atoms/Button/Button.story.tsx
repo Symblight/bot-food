@@ -19,7 +19,9 @@ storiesOf('Atoms/Buttons', module)
       </Button>
     </>
   ))
-  .add('Disabled', () => <Button disabled>{text('children', 'Default button')}</Button>)
+  .add('Disabled', () => (
+    <Button disabled>{text('children', 'Default button')}</Button>
+  ))
   .add('Anchor', () => (
     <Button href="#" elementType="a" onClick={action('button-click')}>
       {text('children', 'Anchor button')}

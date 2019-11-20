@@ -11,7 +11,8 @@ storiesOf('Atoms/Popup', module).add('Default', () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    }}>
+    }}
+  >
     <div style={{ margin: '50px' }}>
       <Popup placement="left" content={<div>Popup content</div>}>
         <span>Popup leftPopup content</span>

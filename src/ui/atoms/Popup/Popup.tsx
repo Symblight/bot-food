@@ -12,9 +12,12 @@ interface PopupProps {
   placement?: Placement;
 }
 
-export function useOnClickOutside(ref, handler) {
+export function useOnClickOutside(
+  ref: React.RefObject<HTMLDivElement>,
+  handler: (event: React.MouseEvent) => void,
+) {
   useEffect(() => {
-    const listener = event => {
+    const listener = (event: any): void => {
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
@@ -31,13 +34,18 @@ export function useOnClickOutside(ref, handler) {
   }, [ref, handler]);
 }
 
-export const Popup: React.FC<PopupProps> = ({ children, className, content, placement }) => {
+export const Popup: React.FC<PopupProps> = ({
+  children,
+  className,
+  content,
+  placement,
+}) => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const refElement = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
-    setVisible(prevState => !prevState);
+    setVisible((prevState) => !prevState);
   };
 
   const handleHide = () => {
@@ -52,17 +60,22 @@ export const Popup: React.FC<PopupProps> = ({ children, className, content, plac
       refElement.current.getBoundingClientRect().right -
         refElement.current.getBoundingClientRect().left -
         10,
-    bottom: refElement.current && refElement.current.getBoundingClientRect().top - 30,
+    bottom:
+      refElement.current && refElement.current.getBoundingClientRect().top - 30,
   });
   const styleRight = () => ({
-    left: refElement.current && refElement.current.getBoundingClientRect().right,
-    bottom: refElement.current && refElement.current.getBoundingClientRect().top - 30,
+    left:
+      refElement.current && refElement.current.getBoundingClientRect().right,
+    bottom:
+      refElement.current && refElement.current.getBoundingClientRect().top - 30,
   });
   const styleBottom = () => ({
-    top: refElement.current && refElement.current.getBoundingClientRect().bottom,
+    top:
+      refElement.current && refElement.current.getBoundingClientRect().bottom,
   });
   const styleTop = () => ({
-    bottom: refElement.current && refElement.current.getBoundingClientRect().top,
+    bottom:
+      refElement.current && refElement.current.getBoundingClientRect().top,
   });
 
   const align = {
@@ -71,7 +84,7 @@ export const Popup: React.FC<PopupProps> = ({ children, className, content, plac
     top: styleTop(),
     bottom: styleBottom(),
   };
-  console.log(refElement.current && refElement.current.getBoundingClientRect());
+
   return (
     <>
       {React.cloneElement(children, {
@@ -79,7 +92,7 @@ export const Popup: React.FC<PopupProps> = ({ children, className, content, plac
         ref: refElement,
       })}
       {visible && (
-        <div ref={ref} style={align[placement]} className={classnames(className, 'bf-popup')}>
+        <div ref={ref} className={classnames(className, 'bf-popup')}>
           {content}
         </div>
       )}

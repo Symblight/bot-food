@@ -6,11 +6,16 @@ import { Group } from './Group';
 function TestToggle() {
   const [value, setValue] = useState(false);
   const [title, setTitle] = useState('Заголовок');
-  const handleChange = event => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
   };
   return (
-    <Group title={title} toggle={value} onEdit={handleChange} onToggle={toggle => setValue(toggle)}>
+    <Group
+      title={title}
+      toggle={value}
+      onEdit={handleChange}
+      onToggle={(toggle) => setValue(toggle)}
+    >
       <div>11</div>
       <div>12</div>
       <div>13</div>
@@ -19,7 +24,14 @@ function TestToggle() {
 }
 
 storiesOf('Molecules/Group', module).add('Default', () => (
-  <div style={{ margin: '10px', width: '600px', display: 'flex', justifyContent: 'space-between' }}>
+  <div
+    style={{
+      margin: '10px',
+      width: '600px',
+      display: 'flex',
+      justifyContent: 'space-between',
+    }}
+  >
     {TestToggle()}
   </div>
 ));

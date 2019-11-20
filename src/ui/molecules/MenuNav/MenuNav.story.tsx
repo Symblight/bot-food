@@ -5,7 +5,9 @@ import { MemoryRouter } from 'react-router-dom';
 import { MenuNav } from './MenuNav';
 
 storiesOf('Molecules/MenuNav', module)
-  .addDecorator(story => <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+  ))
   .add('Default', () => (
     <div
       style={{
@@ -13,7 +15,8 @@ storiesOf('Molecules/MenuNav', module)
         width: '600px',
         display: 'flex',
         justifyContent: 'space-between',
-      }}>
+      }}
+    >
       <MenuNav />
     </div>
   ));
