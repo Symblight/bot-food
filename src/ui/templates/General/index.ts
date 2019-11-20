@@ -1,0 +1,1 @@
+export { GeneralTemplate } from './General';

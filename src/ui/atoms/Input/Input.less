@@ -1,0 +1,64 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+
+.bf-input {
+  position: relative;
+
+  &__control {
+    height: 2rem;
+    line-height: 1.5;
+    outline: 0;
+    transition: box-shadow .1s ease-in, border .1s ease-in, background-color .1s ease-in;
+    color: @black-color;
+    border-radius: @border-radius-size;
+    border: 2px solid @separator-color;
+    background-color: @separator-color;
+    padding: .1rem .5rem .1rem .5rem;
+    width: 100%;
+
+    &:focus {
+      border: 2px solid @primary-color;
+      background-color: @white-color;
+    }
+
+    &--error {
+      border: 2px solid @error-color !important;
+      border-bottom-left-radius: 0px !important;
+    }
+
+    &:disabled,
+    &--disabled {
+      opacity: 0.5;
+    }
+
+    &--small {
+      height: 2rem;
+      font-size: 12px;
+    }
+  
+    &--default {
+      height: 2.6rem;
+      font-size: 14px;
+    }
+  
+    &--large {
+      height: 3.4rem;
+      font-size: 18px;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 95%;
+    left: 0;
+    background-color: @error-color;
+    color: @white-color;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .2rem;
+    border-bottom-right-radius: @border-radius-size;
+    border-bottom-left-radius: @border-radius-size;
+    font-size: 13px;
+  }
+}

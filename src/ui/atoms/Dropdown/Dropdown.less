@@ -1,0 +1,57 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-dropdown {
+  display: inline-block;;
+  position: relative;
+  cursor: pointer;
+
+  &__control {
+    position: relative;
+  }
+
+  &__menu {
+    position: absolute;
+    box-shadow: @box-shadow;
+    background-color: @white-color;
+    border-radius: @border-radius-size;
+    overflow: hidden;
+    
+    top: 100%;
+    z-index: 2000;
+
+    
+    &--downLeft {
+      left: auto;
+      right: 0;
+    }
+
+    &--downRight {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  &__menu-item {
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    padding: 10px 8px 10px 8px;
+    border-bottom: 1px solid @separator-color;
+    line-height: 24px;
+    height: 44px;
+    z-index: 1;
+    left: 0px;
+    top: 10px;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background-color: @primary-color;
+      color: @white-color;
+    }
+  }
+}

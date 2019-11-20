@@ -1,0 +1,25 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-tag {
+    display: inline-block;
+    border-radius: @border-radius-size;
+    color: @white-color;
+    font-size: 14px;
+
+    &__content {
+        padding: 4px 10px 4px 10px;
+    }
+
+    &--success {
+        background-color: @success-color;
+    }
+
+    &--danger {
+        background-color: @error-color;
+    }
+
+    &--warning {
+        background-color: @warning-color
+    }
+}

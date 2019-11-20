@@ -1,0 +1,52 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-card-bot {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 280px;
+  cursor: pointer;
+
+  &__body {
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  &__footer {
+    background: #f8f9f9;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.menu-bot-card {
+  &__menuitem {
+    display: flex;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}

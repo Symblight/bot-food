@@ -1,0 +1,55 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-text-area {
+  display: initial;
+  position: relative;
+
+  &__control {
+    height: 5rem;
+    line-height: 1.5;
+    outline: 0;
+    transition: box-shadow .1s ease-in, border .1s ease-in, background-color .1s ease-in;
+    color: @black-color;
+    font-family: @font-face;
+    border-radius: @border-radius-size;
+    border: 2px solid @separator-color;
+    background-color: @separator-color;
+    padding: .1rem .5rem .1rem .5rem;
+    font-size: 14px;
+    width: 100%;
+
+    &--no-resize {
+      resize: none;
+    }
+
+    &:focus {
+      border: 2px solid @primary-color;
+      background-color: @white-color;
+    }
+
+    &--error {
+      border: 2px solid @error-color !important;
+      border-bottom-left-radius: 0px !important;
+    }
+
+    &:disabled,
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    background-color: @error-color;
+    color: @white-color;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .2rem;
+    border-bottom-right-radius: @border-radius-size;
+    border-bottom-left-radius: @border-radius-size;
+    font-size: 13px;
+  }
+}
