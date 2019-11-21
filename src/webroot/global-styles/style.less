@@ -8,17 +8,32 @@
 }
 
 @font-face {
-  font-family: 'Inter-Bold';
+  font-family: 'Inter';
   src: url('../fonts/Inter-Regular.woff') format('woff');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Inter-Bold';
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
   src: url('../fonts/Inter-Bold.woff') format('woff');
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-ExtraBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 800;
 }
 
 body {
@@ -28,7 +43,7 @@ body {
 }
 
 html {
-  font: 16px @font-family;
+  font: normal 500 16px @font-family;
   color: @font-color;
   height: 100%;
 }
@@ -40,4 +55,8 @@ html {
 a {
   text-decoration: none;
   color: @font-color;
+}
+
+ul {
+  list-style: none;
 }

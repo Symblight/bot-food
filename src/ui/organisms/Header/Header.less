@@ -1,0 +1,50 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-header {
+    display: block;
+    min-width: 495px;
+    height: 71px;
+    line-height: 70px;
+    border-bottom: @separator-color 1px solid;
+
+    &__head-left {
+        white-space: nowrap;
+        float: left;
+    }
+
+    &__logo {
+        margin-left: 30px;
+        margin-top: 15px;
+        vertical-align: top;
+        display: inline-block;
+        height: 38px;
+        width: 154px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-image: url('~src/webroot/img/logo.png');
+        background-size: contain;
+    }
+
+    &__nav {}
+
+    &__head-user {
+        margin-right: 30px;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    &__userpic {
+        height: 65px;
+        margin-left: 18px;
+        cursor: pointer;
+        display: inline-flex;
+        max-width: 100%;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+
+    &__username {
+        margin-right: 12px;
+    }
+}

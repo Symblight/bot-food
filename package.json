@@ -4,8 +4,8 @@
   "description": "delivery dashboard food",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --hot --config ./config/webpack.dev.js",
-    "build": "webpack --config ./config/webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config ./config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/*/** --fix",
     "storybook": "start-storybook -p 6006"
