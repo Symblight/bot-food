@@ -32,6 +32,10 @@ module.exports = {
         include: /flexboxgrid/
       },
       {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        loader: 'file-loader',
+      },
+      {
         test: /\.less$/,
         use: [
             {

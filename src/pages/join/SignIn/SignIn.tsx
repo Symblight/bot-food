@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { withFormik, FormikProps, FormikErrors } from 'formik';
 
-import { FormTemplate, Input, PasswordInput, Button, Image } from '@bot/ui';
+import { FormTemplate, Input, PasswordInput, Button, Image } from 'ui';
 import { RobotFace } from '@webroot/img';
 
 import './SignIn.less';
