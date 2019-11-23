@@ -27,6 +27,7 @@ const icons: string[] = [
   'flash',
   'grid',
   'message',
+  'log-out',
 ];
 
 storiesOf('Atoms/Icons', module).add('Icons', () => (

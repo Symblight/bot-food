@@ -4,11 +4,19 @@
 .bf-general-layout {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
 
-    &__header {}
+    &__header {
+        margin-bottom: 2rem;
+    }
 
-    &__container {}
+    &__container {
+        flex: 1 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 
-    &__footer {}
+    &__footer {
+        flex: 0 0 auto;
+    }
 }

@@ -60,15 +60,15 @@ export const BotCard: React.FC<BotCardProps> = ({
   };
 
   return (
-    <Link to={to}>
-      <Card className={classnames(className, 'bf-card-bot')}>
+    <Link to={to} className={classnames(className, 'bf-card-bot')}>
+      <Card className="bf-card-bot">
         <div className="bf-card-bot__head">
           <span>{data.title}</span>
           <div className="bf-card-bot__menu">
             <Dropdown overlay={renderOptions()}>
               <Button
                 size="small"
-                type="inline"
+                priority="inline"
                 icon={<Icon icon="more-vertical" />}
               />
             </Dropdown>
