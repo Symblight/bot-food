@@ -1,9 +1,11 @@
+import { RouteConfig } from 'react-router-config';
+
 import { SignInPage } from './join';
 import { HomePage } from './home';
 import { ProfilePage } from './profile';
-import { ConstructorPage } from './constructor';
+import { ConstructorPage, View, SettingsPage, UsersPage } from './constructor';
 
-export const routes = () => [
+export const routes = (): RouteConfig[] => [
   {
     path: '/',
     exact: true,
@@ -21,7 +23,23 @@ export const routes = () => [
   },
   {
     path: '/bot/:id',
-    exact: true,
-    component: ConstructorPage,
+    component: View,
+    routes: [
+      {
+        path: '/bot/:id',
+        component: ConstructorPage,
+        exact: true,
+      },
+      {
+        path: '/bot/:id/settings',
+        component: SettingsPage,
+        exact: true,
+      },
+      {
+        path: '/bot/:id/users',
+        component: UsersPage,
+        exact: true,
+      },
+    ],
   },
 ];

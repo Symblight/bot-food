@@ -2,19 +2,32 @@
 @import '~src/webroot/global-styles/mixins';
 
 .bf-navigation {
+    height: 100%;
+    width: 64px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-
-    width: 64px;
 
     background-color: @primary-color;
     color: @white-color;
 
+    &__logo {
+        height: 64px;
+        background-image: url('~src/webroot/img/logo.png');
+        background-size: cover;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        height: 100%;
+    }
+
     &__button-nav {
         color: @white-color;
+
         &:hover {
             background-color: @primary-color-darker;
         }
