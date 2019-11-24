@@ -1,0 +1,22 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    width: 64px;
+
+    background-color: @primary-color;
+    color: @white-color;
+
+    &__button-nav {
+        color: @white-color;
+        &:hover {
+            background-color: @primary-color-darker;
+        }
+    }
+}
