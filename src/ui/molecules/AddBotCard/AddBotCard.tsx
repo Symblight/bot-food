@@ -17,7 +17,9 @@ export const AddBotCard: React.FC<AddBotCardProps> = ({
   return (
     <Card onClick={onClick} className={classnames(className, 'add-bot-card')}>
       <div className="add-bot-card__body">
-        Add bot <Icon icon="plus" />
+        <div className="add-bot-card__content">
+          Add bot <Icon icon="plus" />
+        </div>
       </div>
     </Card>
   );

@@ -36,12 +36,12 @@ export const HomePage: React.FC<HomePageProps> = () => {
         <BotCard
           className="bf-home-page__card"
           to={`bot/${1}`}
-          data={{ id: 0, title: 'ttt', description: 'tt' }}
+          data={{ id: 0, title: 'Techvice', description: 'foods' }}
         />
         <BotCard
           className="bf-home-page__card"
           to={`bot/${2}`}
-          data={{ id: 0, title: 'jjj', description: 'hh' }}
+          data={{ id: 0, title: 'Techvice', description: 'test-food' }}
         />
         <AddBotCard onClick={handleClickAdd} className="bf-home-page__card" />
       </div>

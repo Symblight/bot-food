@@ -3,16 +3,26 @@
 
 .add-bot-card {
   border: 2px dashed @grey-darker-color;
+  width: 180px;
 
   &__body {
     padding: 50px 20px;
     align-items: center;
     text-align: center;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     color: @grey-darker-color;
     background-color: @block-ligth-secondary-color;
     cursor: pointer;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 }

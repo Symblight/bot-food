@@ -1,11 +1,10 @@
 @import '~src/webroot/variables/index';
 @import '~src/webroot/global-styles/mixins';
 
-.bf-general-layout {
+.bf-constructor-layout {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    background-color: @block-ligth-color;
+    height: 100%;
 
     &__header {
         margin-bottom: 2rem;
@@ -13,9 +12,12 @@
     }
 
     &__container {
+        display: flex;
         flex: 1 0 auto;
-        padding-left: 2rem;
-        padding-right: 2rem;
+    }
+
+    &__content {
+        width: 100%;
     }
 
     &__footer {
