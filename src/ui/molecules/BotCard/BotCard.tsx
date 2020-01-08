@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { BotDataLink } from 'webroot/structures';
-import { Card, Icon, Button, Dropdown } from 'ui';
+import { Card, Icon, Button, Dropdown, Tag } from 'ui';
 
 import './BotCard.less';
 
@@ -15,6 +15,7 @@ interface BotCardProps {
   onArchive?: (id: number | string) => void;
   onEdit?: (id: number | string) => void;
   to: string;
+  active?: boolean;
 }
 
 export const BotCard: React.FC<BotCardProps> = ({
@@ -23,6 +24,7 @@ export const BotCard: React.FC<BotCardProps> = ({
   data,
   onEdit,
   onArchive,
+  active,
 }) => {
   const handleOnArchive = () => {
     if (onArchive) {
@@ -78,7 +80,13 @@ export const BotCard: React.FC<BotCardProps> = ({
           </div>
         </div>
         <div className="bf-card-bot__body">{data.description}</div>
-        <div className="bf-card-bot__footer">Status</div>
+        <div className="bf-card-bot__footer">
+          {active ? (
+            <Tag type="success">active</Tag>
+          ) : (
+            <Tag type="danger">closed</Tag>
+          )}
+        </div>
       </Card>
     </Link>
   );

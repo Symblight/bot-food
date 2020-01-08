@@ -3,8 +3,28 @@ import classnames from 'classnames';
 
 import './Tab.less';
 
-interface TabProps {}
+interface TabProps {
+  className?: string;
+  title: string;
+  isActive?: boolean;
+}
 
-export const Tab: React.FC<TabProps> = ({ children }) => {
-  return <div className="bf-tab">{children}</div>;
+export const Tab: React.FC<TabProps> = ({
+  className,
+  title,
+  isActive,
+  ...props
+}) => {
+  return (
+    <div
+      {...props}
+      className={classnames(
+        'bf-tab__button',
+        isActive && 'bf-tab__button--active',
+        className,
+      )}
+    >
+      {title}
+    </div>
+  );
 };

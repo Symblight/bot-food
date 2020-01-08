@@ -6,11 +6,12 @@ import {
   Header,
   Footer,
   BotCard,
-  AddBotCard,
+  AddCard,
   Modal,
   Input,
   Button,
   Tabs,
+  Tab,
 } from 'ui';
 
 import './Home.less';
@@ -37,20 +38,37 @@ export const HomePage: React.FC<HomePageProps> = () => {
     >
       <div className="bf-home-page__container">
         <div className="bf-home-page__tabs">
-          <Tabs />
-        </div>
-        <div className="bf-home-page__cards-bot">
-          <AddBotCard onClick={handleClickAdd} className="bf-home-page__card" />
-          <BotCard
-            className="bf-home-page__card"
-            to={`bot/${1}`}
-            data={{ id: 0, title: 'Techvice', description: 'foods' }}
-          />
-          <BotCard
-            className="bf-home-page__card"
-            to={`bot/${2}`}
-            data={{ id: 0, title: 'Techvice', description: 'test-food' }}
-          />
+          <Tabs selectedKey="bots">
+            <Tab key="bots" title="🕹️ Bots">
+              <div className="bf-home-page__cards-bot">
+                <AddCard
+                  onClick={handleClickAdd}
+                  className="bf-home-page__card"
+                  title="Add bot"
+                />
+                <BotCard
+                  className="bf-home-page__card"
+                  to={`bot/${1}`}
+                  data={{ id: 0, title: 'Techvice', description: 'foods' }}
+                  active
+                />
+                <BotCard
+                  className="bf-home-page__card"
+                  to={`bot/${2}`}
+                  data={{ id: 0, title: 'Techvice', description: 'test-food' }}
+                />
+              </div>
+            </Tab>
+            <Tab key="foods" title="🍔 Foods">
+              <div className="bf-home-page__cards-bot">
+                <AddCard
+                  onClick={handleClickAdd}
+                  className="bf-home-page__card"
+                  title="Add food"
+                />
+              </div>
+            </Tab>
+          </Tabs>
         </div>
       </div>
       <Modal

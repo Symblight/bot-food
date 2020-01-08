@@ -1,4 +1,11 @@
 @import '~src/webroot/variables/index';
 @import '~src/webroot/global-styles/mixins';
 
-.bf-tabs {}
+.bf-tabs {
+    display: flex;
+    flex-direction: column;
+    &__items {
+        display: flex;
+        margin-bottom: 12px;
+    }
+}

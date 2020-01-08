@@ -3,6 +3,7 @@ import { RouteConfig } from 'react-router-config';
 import { SignInPage } from './join';
 import { HomePage } from './home';
 import { ProfilePage } from './profile';
+import { FoodPage } from './food';
 import { ConstructorPage, View, SettingsPage, UsersPage } from './constructor';
 
 export const routes = (): RouteConfig[] => [
@@ -20,6 +21,11 @@ export const routes = (): RouteConfig[] => [
     path: '/profile',
     exact: true,
     component: ProfilePage,
+  },
+  {
+    path: '/food/:id',
+    exact: true,
+    component: FoodPage,
   },
   {
     path: '/bot/:id',

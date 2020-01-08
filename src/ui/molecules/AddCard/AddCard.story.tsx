@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { AddBotCard } from './AddBotCard';
+import { AddCard } from './AddCard';
 
-storiesOf('Molecules/AddBotCard', module).add('Default', () => (
+storiesOf('Molecules/AddCard', module).add('Default', () => (
   <div
     style={{
       margin: '10px',
@@ -12,6 +12,6 @@ storiesOf('Molecules/AddBotCard', module).add('Default', () => (
       justifyContent: 'space-between',
     }}
   >
-    <AddBotCard />
+    <AddCard title="add bot" />
   </div>
 ));

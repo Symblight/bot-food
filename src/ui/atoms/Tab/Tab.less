@@ -1,4 +1,27 @@
 @import '~src/webroot/variables/index';
 @import '~src/webroot/global-styles/mixins';
 
-.bf-tab {}
+.bf-tab {
+    display: flex;
+    flex-direction: column;
+    &__button {
+        display: block;
+        text-align: center;
+        cursor: pointer;
+        padding: 8px;
+        background-color: @white-color;
+        border-radius: @border-radius-size;
+        box-shadow: @box-shadow;
+
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+
+        &--active {
+            background-color: @primary-color;
+            color: @white-color;
+        }
+    }
+
+    &__content {}
+}

@@ -1,4 +1,4 @@
-export { AddBotCard } from './AddBotCard';
+export { AddCard } from './AddCard';
 export { BotCard } from './BotCard';
 export { MenuNav } from './MenuNav';
 export { Group } from './Group';
