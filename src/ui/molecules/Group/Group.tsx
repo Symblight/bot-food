@@ -60,7 +60,7 @@ export const Group: React.FC<GroupProps> = ({
           <Input value={title} onChange={onEdit} onBlur={handleToggle} />
         )}
       </div>
-      {toggle && <div className="bg-group__body">{children}</div>}
+      {toggle && <div className="bf-group__body">{children}</div>}
     </div>
   );
 };

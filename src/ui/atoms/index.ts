@@ -12,3 +12,4 @@ export { TextArea } from './TextArea';
 export { Spinner } from './Spinner';
 export { Avatar } from './Avatar';
 export { Tag } from './Tag';
+export { Block } from './Block';

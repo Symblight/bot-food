@@ -3,7 +3,7 @@ import React from 'react';
 import { RouteComponentProps, match } from 'react-router-dom';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 
-import { Navigation, ConstructorTemplate } from 'ui';
+import { Navigation, ConstructorTemplate, HeaderConstructor } from 'ui';
 
 import './View.less';
 
@@ -19,7 +19,7 @@ export const View: React.FC<ViewProps> = ({ route, match }) => {
   return (
     <ConstructorTemplate
       navigation={<Navigation id={match.params.id} />}
-      header={<div>head</div>}
+      header={<HeaderConstructor />}
     >
       {renderRoutes(route && route.routes)}
     </ConstructorTemplate>

@@ -9,6 +9,8 @@ const DIST = resolve(__dirname, '..', 'dist');
 const ENTRY_PATH = resolve(__dirname, '..', 'src/index.tsx');
 const ENTRY_HTML_FILE = resolve(__dirname, '..', 'public/index.html');
 
+const paths = require("./paths")
+
 module.exports = {
   entry: ENTRY_PATH,
   output: {
@@ -19,11 +21,14 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
-      ui: resolve(__dirname, '..', 'src/ui'),
-      features: resolve(__dirname, 'src/features'),
-      src: resolve(__dirname, '..', 'src'),
-      structures: resolve(__dirname, '..', 'src/structures'),
+      'src': paths.src,
+      'ui': paths.ui,
+      'utils': paths.utils,
+      'features': paths.features,
+      'mocks': paths.mocks,
+      'structures': paths.structures,
       "@webroot": resolve(__dirname, '..', 'src/webroot'),
+
     },
     modules: ['node_modules'],
   },

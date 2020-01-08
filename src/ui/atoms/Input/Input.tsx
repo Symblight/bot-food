@@ -25,10 +25,9 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   return (
-    <div className="bf-input">
+    <div className={classnames('bf-input', className)}>
       <input
         className={classnames(
-          className,
           'bf-input__control',
           disabled && 'bf-input__control--disabled',
           error && 'bf-input__control--error',

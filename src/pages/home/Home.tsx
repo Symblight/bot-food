@@ -8,6 +8,8 @@ import {
   BotCard,
   AddBotCard,
   Modal,
+  Input,
+  Button,
 } from 'ui';
 
 import './Home.less';
@@ -50,7 +52,8 @@ export const HomePage: React.FC<HomePageProps> = () => {
         visible={visibleAddModal}
         onClose={handleHideAdd}
       >
-        Создать бота
+        <Input />
+        <Button priority="primary">Add bot</Button>
       </Modal>
     </GeneralTemplate>
   );
