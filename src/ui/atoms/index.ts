@@ -13,3 +13,4 @@ export { Spinner } from './Spinner';
 export { Avatar } from './Avatar';
 export { Tag } from './Tag';
 export { Block } from './Block';
+export { Tab } from './Tab';

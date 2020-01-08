@@ -10,6 +10,7 @@ import {
   Modal,
   Input,
   Button,
+  Tabs,
 } from 'ui';
 
 import './Home.less';
@@ -34,18 +35,23 @@ export const HomePage: React.FC<HomePageProps> = () => {
       }
       footer={<Footer />}
     >
-      <div className="bf-home-page__cards-bot">
-        <BotCard
-          className="bf-home-page__card"
-          to={`bot/${1}`}
-          data={{ id: 0, title: 'Techvice', description: 'foods' }}
-        />
-        <BotCard
-          className="bf-home-page__card"
-          to={`bot/${2}`}
-          data={{ id: 0, title: 'Techvice', description: 'test-food' }}
-        />
-        <AddBotCard onClick={handleClickAdd} className="bf-home-page__card" />
+      <div className="bf-home-page__container">
+        <div className="bf-home-page__tabs">
+          <Tabs />
+        </div>
+        <div className="bf-home-page__cards-bot">
+          <AddBotCard onClick={handleClickAdd} className="bf-home-page__card" />
+          <BotCard
+            className="bf-home-page__card"
+            to={`bot/${1}`}
+            data={{ id: 0, title: 'Techvice', description: 'foods' }}
+          />
+          <BotCard
+            className="bf-home-page__card"
+            to={`bot/${2}`}
+            data={{ id: 0, title: 'Techvice', description: 'test-food' }}
+          />
+        </div>
       </div>
       <Modal
         title="Создать бота"

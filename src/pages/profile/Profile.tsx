@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { GeneralTemplate, Header, Footer } from 'ui';
+import { GeneralTemplate, Header, Footer, Avatar, Block } from 'ui';
 
 import './Profile.less';
 
@@ -18,7 +18,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = () => {
       }
       footer={<Footer />}
     >
-      Profile
+      <div>
+        <Avatar
+          size="large"
+          src="https://sun9-23.userapi.com/c855428/v855428321/116aa2/uqyf9qbT5bI.jpg?ava=1"
+        />
+        <div>Alexey Tkachenko</div>
+        <div>Menu</div>
+        <div>
+          <Block title="Title">dd</Block>
+        </div>
+      </div>
     </GeneralTemplate>
   );
 };

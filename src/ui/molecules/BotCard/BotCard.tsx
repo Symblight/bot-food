@@ -64,7 +64,10 @@ export const BotCard: React.FC<BotCardProps> = ({
       <Card className="bf-card-bot">
         <div className="bf-card-bot__head">
           <span>{data.title}</span>
-          <div className="bf-card-bot__menu">
+          <div
+            className="bf-card-bot__menu"
+            onClick={(e) => e.preventDefault()}
+          >
             <Dropdown overlay={renderOptions()}>
               <Button
                 size="small"
