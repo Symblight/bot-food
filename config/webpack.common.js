@@ -27,7 +27,7 @@ module.exports = {
       'features': paths.features,
       'mocks': paths.mocks,
       'structures': paths.structures,
-      "@webroot": resolve(__dirname, '..', 'src/webroot'),
+      "webroot": resolve(__dirname, '..', 'src/webroot'),
 
     },
     modules: ['node_modules'],

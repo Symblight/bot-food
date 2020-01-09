@@ -5,6 +5,7 @@ import { HomePage } from './home';
 import { ProfilePage } from './profile';
 import { FoodPage } from './food';
 import { UsersPage } from './users';
+import { NotFoundPage } from './notFound';
 import {
   ConstructorPage,
   View,
@@ -58,5 +59,8 @@ export const routes = (): RouteConfig[] => [
         exact: true,
       },
     ],
+  },
+  {
+    component: NotFoundPage,
   },
 ];

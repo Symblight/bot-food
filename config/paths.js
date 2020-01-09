@@ -8,7 +8,7 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 const paths = {
     src: resolveApp('src'),
     ui: resolveApp('src/ui'),
-    mocks: resolveApp('src/mocks'),
+    mocks: resolveApp('src/webroot/mocks'),
     utils: resolveApp('src/utils'),
     features: resolveApp('src/features'),
     structures: resolveApp('src/structures'),

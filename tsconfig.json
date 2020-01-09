@@ -8,9 +8,7 @@
       "esnext"
     ],
     "paths": {
-      "features/*": ["features/*"],
-      "webroot/*": ["webroot/*"],
-      "ui": ["ui"]
+      "ui": ["ui"],
     },
     "allowJs": true,
     "skipLibCheck": true,

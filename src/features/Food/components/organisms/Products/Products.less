@@ -1,0 +1,21 @@
+@import '~src/webroot/variables/index';
+@import '~src/webroot/global-styles/mixins';
+
+.bf-products {
+    display: flex;
+    flex-direction: column;
+    &__rows {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: 22px;
+        }
+    }
+
+    &__item {
+        min-width: 260px;
+        width: 260px;
+        &:not(:last-child) {
+            margin-right: 22px;
+        }
+    }
+}

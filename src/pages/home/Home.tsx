@@ -90,7 +90,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
         </div>
       </div>
       <Modal
-        title="Создать бота"
+        title="Create new bot"
         visible={visibleAddModal}
         onClose={handleHideAdd}
       >
