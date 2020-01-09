@@ -18,7 +18,10 @@ export const FoodPage: React.FC<FoodPageProps> = () => {
       }
       footer={<Footer />}
     >
-      <div>Food page</div>
+      <div className="bf-food-page">
+        <div className="bf-food-page__content">Foods</div>
+        <div className="bf-food-page__menu">Menu</div>
+      </div>
     </GeneralTemplate>
   );
 };

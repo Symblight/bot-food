@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
       <div className="bf-home-page__container">
         <div className="bf-home-page__tabs">
           <Tabs selectedKey="bots">
-            <Tab key="bots" image={Joystick} title="Boots">
+            <Tab key="bots" image={Joystick} title="Bots">
               <div className="bf-home-page__cards-bot">
                 <AddCard
                   onClick={handleClickAdd}
@@ -56,12 +56,6 @@ export const HomePage: React.FC<HomePageProps> = () => {
                   data={{ id: 0, title: 'Techvice', description: 'foods' }}
                   active
                 />
-                <BotCard
-                  className="bf-home-page__card"
-                  to={`bot/${2}`}
-                  data={{ id: 0, title: 'Techvice', description: 'test-food' }}
-                  active
-                />
               </div>
             </Tab>
             <Tab key="foods" image={Humburger} title="Food">
@@ -70,6 +64,16 @@ export const HomePage: React.FC<HomePageProps> = () => {
                   onClick={handleClickAdd}
                   className="bf-home-page__card"
                   title="Add food"
+                />
+                <BotCard
+                  className="bf-home-page__card"
+                  to={`food/${2}`}
+                  data={{
+                    id: 0,
+                    title: 'Techvice breakfast',
+                    description: 'test-food',
+                  }}
+                  active
                 />
               </div>
             </Tab>

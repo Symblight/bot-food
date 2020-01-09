@@ -6,7 +6,7 @@ import { GeneralTemplate } from './General';
 
 import { Header, Footer } from 'ui';
 
-storiesOf('Organisms/General', module)
+storiesOf('Templates/General', module)
   .addDecorator((story) => (
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
   ))

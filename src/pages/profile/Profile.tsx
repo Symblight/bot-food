@@ -34,7 +34,8 @@ export const ProfilePage: React.FC<ProfilePageProps> = () => {
               size="large"
               src="https://sun9-23.userapi.com/c855428/v855428321/116aa2/uqyf9qbT5bI.jpg?ava=1"
             />
-            <h4>Alexey Tkachenko</h4>
+            <h2 className="bf-profile-page__field">Alexey Tkachenko</h2>
+            <h4 className="bf-profile-page__field">Adminsitrator</h4>
             <div className="bf-profile-page__row">
               <h4>symblight@gmail.com</h4>
               <Icon icon="edit" />
@@ -42,8 +43,8 @@ export const ProfilePage: React.FC<ProfilePageProps> = () => {
           </Block>
           <Block title="Edit password" className="bf-profile-page__block">
             <div className="bf-profile-page__content-block">
-              <PasswordInput />
-              <PasswordInput />
+              <PasswordInput className="bf-profile-page__field" />
+              <PasswordInput className="bf-profile-page__field" />
               <Button priority="primary">Edit password</Button>
             </div>
           </Block>

@@ -25,13 +25,14 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   return (
-    <div className={classnames('bf-input', className)}>
+    <div className={classnames('bf-input')}>
       <input
         className={classnames(
           'bf-input__control',
           disabled && 'bf-input__control--disabled',
           error && 'bf-input__control--error',
           `bf-input__control--${sizeInput}`,
+          className,
         )}
         value={value}
         onChange={onChange}
