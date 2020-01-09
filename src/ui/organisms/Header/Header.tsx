@@ -3,7 +3,10 @@ import classnames from 'classnames';
 
 import { Link } from 'react-router-dom';
 
-import { Avatar, Dropdown, Icon } from 'ui';
+import { Avatar, Dropdown, Icon, Image } from 'ui';
+
+import Laptop from 'src/webroot/img/laptop.png';
+import Joystick from 'src/webroot/img/joystick.png';
 
 import './Header.less';
 
@@ -35,15 +38,27 @@ export const Header: React.FC<HeaderProps> = ({ className, avatar, name }) => {
           <span className="bf-header__logo" />
         </Link>
       </div>
+      <div className="bf-header__items">
+        <Link to="/" className="bf-header__item">
+          <Image className="bf-header__image" src={Joystick} alt="joystick" />
+          Bots
+        </Link>
+        <Link to="/users" className="bf-header__item">
+          <Image className="bf-header__image" src={Laptop} alt="users" />
+          Users
+        </Link>
+      </div>
       <div className="bf-header__head-user">
-        <Dropdown overlay={renderProfileMenu()}>
-          <div>
-            <span className="bf-header__userpic">
-              <span className="bf-header__username">{name}</span>
-              <Avatar size="small" src={avatar} />
-            </span>
-          </div>
-        </Dropdown>
+        <div className="bf-header__item">
+          <Dropdown overlay={renderProfileMenu()}>
+            <div>
+              <span className="bf-header__userpic">
+                <span className="bf-header__username">{name}</span>
+                <Avatar size="small" src={avatar} />
+              </span>
+            </div>
+          </Dropdown>
+        </div>
       </div>
     </div>
   );

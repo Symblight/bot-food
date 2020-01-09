@@ -2,7 +2,7 @@
 @import '~src/webroot/global-styles/mixins';
 
 .bf-header {
-    display: block;
+    display: flex;
     min-width: 495px;
     height: 71px;
     line-height: 70px;
@@ -51,5 +51,29 @@
     &__menu-user {
         display: flex;
         width: 120px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding-left: 4px;
+        padding-right: 4px;
+        min-width: 128px;
+
+        &:hover {
+            background-color: @primary-color;
+            color: @white-color;
+        }
+    }
+
+    &__items {
+        display: flex;
+        width: 100%;
+    }
+
+    &__image {
+        width: 35px;
     }
 }

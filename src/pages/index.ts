@@ -4,7 +4,13 @@ import { SignInPage } from './join';
 import { HomePage } from './home';
 import { ProfilePage } from './profile';
 import { FoodPage } from './food';
-import { ConstructorPage, View, SettingsPage, UsersPage } from './constructor';
+import { UsersPage } from './users';
+import {
+  ConstructorPage,
+  View,
+  SettingsPage,
+  UsersPage as UsersConstrPage,
+} from './constructor';
 
 export const routes = (): RouteConfig[] => [
   {
@@ -21,6 +27,11 @@ export const routes = (): RouteConfig[] => [
     path: '/profile',
     exact: true,
     component: ProfilePage,
+  },
+  {
+    path: '/users',
+    exact: true,
+    component: UsersPage,
   },
   {
     path: '/food/:id',
@@ -43,7 +54,7 @@ export const routes = (): RouteConfig[] => [
       },
       {
         path: '/bot/:id/users',
-        component: UsersPage,
+        component: UsersConstrPage,
         exact: true,
       },
     ],

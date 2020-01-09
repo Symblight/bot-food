@@ -9,14 +9,12 @@ import './HeaderConstructor.less';
 
 interface HeaderConstructorProps {
   className?: string;
-  avatar?: string;
-  name?: string;
+  title: string;
 }
 
 export const HeaderConstructor: React.FC<HeaderConstructorProps> = ({
   className,
-  avatar,
-  name,
+  title,
 }) => {
   return (
     <div className={classnames(className, 'bf-header-c')}>
@@ -26,6 +24,7 @@ export const HeaderConstructor: React.FC<HeaderConstructorProps> = ({
         </Link>
       </div>
       <div className="bf-header-c__head-user">
+        <span>{title}</span>
         <Button priority="primary">Run bot</Button>
       </div>
     </div>

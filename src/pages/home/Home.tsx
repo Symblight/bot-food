@@ -14,6 +14,10 @@ import {
   Tab,
 } from 'ui';
 
+import Humburger from 'src/webroot/img/hamburger.png';
+import Joystick from 'src/webroot/img/joystick.png';
+import Package from 'src/webroot/img/package.png';
+
 import './Home.less';
 
 interface HomePageProps extends RouteComponentProps {}
@@ -39,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = () => {
       <div className="bf-home-page__container">
         <div className="bf-home-page__tabs">
           <Tabs selectedKey="bots">
-            <Tab key="bots" title="🕹️ Bots">
+            <Tab key="bots" image={Joystick} title="Boots">
               <div className="bf-home-page__cards-bot">
                 <AddCard
                   onClick={handleClickAdd}
@@ -56,15 +60,25 @@ export const HomePage: React.FC<HomePageProps> = () => {
                   className="bf-home-page__card"
                   to={`bot/${2}`}
                   data={{ id: 0, title: 'Techvice', description: 'test-food' }}
+                  active
                 />
               </div>
             </Tab>
-            <Tab key="foods" title="🍔 Foods">
+            <Tab key="foods" image={Humburger} title="Food">
               <div className="bf-home-page__cards-bot">
                 <AddCard
                   onClick={handleClickAdd}
                   className="bf-home-page__card"
                   title="Add food"
+                />
+              </div>
+            </Tab>
+            <Tab key="package" image={Package} title="Archive">
+              <div className="bf-home-page__cards-bot">
+                <BotCard
+                  className="bf-home-page__card"
+                  to={`bot/${2}`}
+                  data={{ id: 0, title: 'Techvice', description: 'test-food' }}
                 />
               </div>
             </Tab>

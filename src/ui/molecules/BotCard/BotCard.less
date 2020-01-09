@@ -18,8 +18,17 @@
     background: #f8f9f9;
     display: flex;
     padding: 10px 20px;
+    height: 42px;
     align-items: center;
     border-radius: 0 0 10px 10px;
+
+    &--active {
+      background-color: #00cec9;
+    }
+
+    &--archive {
+      background-color: @error-color;
+    }
   }
 
   &__head {

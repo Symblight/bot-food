@@ -36,7 +36,7 @@ export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
           role="presentation"
           onClick={handleClickText}
         >
-          <Icon icon="message" />
+          <Icon icon="message" className="bf-nav-buttons__messages-item" />
           <span className="bf-nav-buttons__text">Текст</span>
         </div>
         <div
@@ -44,7 +44,7 @@ export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
           role="presentation"
           onClick={handleClickMenu}
         >
-          <Icon icon="grid" />
+          <Icon icon="grid" className="bf-nav-buttons__grid-item" />
           <span className="bf-nav-buttons__text">Меню</span>
         </div>
         <div
@@ -52,7 +52,7 @@ export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
           role="presentation"
           onClick={handleClickButtons}
         >
-          <Icon icon="flash" />
+          <Icon icon="flash" className="bf-nav-buttons__buttons-item" />
           <span className="bf-nav-buttons__text">Кнопки</span>
         </div>
         <div
@@ -60,7 +60,7 @@ export const NavButtons: React.FC<NavButtonsProps> = ({ className, onAdd }) => {
           role="presentation"
           onClick={handleClickCart}
         >
-          <Icon icon="shopping-cart" />
+          <Icon icon="shopping-cart" className="bf-nav-buttons__cart-item" />
           <span className="bf-nav-buttons__text">Корзина</span>
         </div>
       </div>

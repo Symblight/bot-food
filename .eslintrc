@@ -42,6 +42,7 @@
     "id-match": 0,
     "@typescript-eslint/no-empty-interface": "warn",
     "linebreak-style": 0,
+    "react/jsx-closing-bracket-location": 0,
     "operator-linebreak": [
       "error",
       "after",

@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { BotDataLink } from 'webroot/structures';
-import { Card, Icon, Button, Dropdown, Tag } from 'ui';
+import { Card, Icon } from 'ui';
 
 import './BotCard.less';
 
@@ -66,27 +66,16 @@ export const BotCard: React.FC<BotCardProps> = ({
       <Card className="bf-card-bot">
         <div className="bf-card-bot__head">
           <span>{data.title}</span>
-          <div
-            className="bf-card-bot__menu"
-            onClick={(e) => e.preventDefault()}
-          >
-            <Dropdown overlay={renderOptions()}>
-              <Button
-                size="small"
-                priority="inline"
-                icon={<Icon icon="more-vertical" />}
-              />
-            </Dropdown>
-          </div>
         </div>
         <div className="bf-card-bot__body">{data.description}</div>
-        <div className="bf-card-bot__footer">
-          {active ? (
-            <Tag type="success">active</Tag>
-          ) : (
-            <Tag type="danger">closed</Tag>
+        <div
+          className={classnames(
+            'bf-card-bot__footer',
+            active
+              ? 'bf-card-bot__footer--active'
+              : 'bf-card-bot__footer--archive',
           )}
-        </div>
+        ></div>
       </Card>
     </Link>
   );

@@ -19,7 +19,7 @@ export const View: React.FC<ViewProps> = ({ route, match }) => {
   return (
     <ConstructorTemplate
       navigation={<Navigation id={match.params.id} />}
-      header={<HeaderConstructor />}
+      header={<HeaderConstructor title="Test bot" />}
     >
       {renderRoutes(route && route.routes)}
     </ConstructorTemplate>
